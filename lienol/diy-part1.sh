@@ -15,3 +15,11 @@
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+
+#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+
+#sed -i '$a src-git diy1 https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
+
+#git clone https://github.com/garypang13/luci-app-dnsfilter.git package/dnsfilter
+#git clone https://github.com/vernesong/OpenClash.git package/openclash
+#git clone https://github.com/garypang13/luci-theme-edge.git package/theme-edge
