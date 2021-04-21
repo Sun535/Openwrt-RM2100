@@ -18,7 +18,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Ma
 [ -e package ] && mkdir package/d -p && cd package/d
 git clone https://github.com/garypang13/luci-app-eqos.git
 git clone https://github.com/vernesong/OpenClash.git
-git clone git clone https://github.com/pymumu/luci-app-smartdns.git -b lede
+git clone https://github.com/pymumu/luci-app-smartdns.git -b lede
 git clone https://github.com/pymumu/openwrt-smartdns.git
 git clone https://github.com/garypang13/luci-app-dnsfilter.git
 git clone https://github.com/garypang13/luci-theme-edge.git
