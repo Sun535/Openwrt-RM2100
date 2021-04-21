@@ -25,4 +25,5 @@ jobs:
       
     - name: Test
       run: |
-        echo "$CONFIG_FILE"
+        echo `$CONFIG_FILE`
+        echo "$ENV_PATH"
