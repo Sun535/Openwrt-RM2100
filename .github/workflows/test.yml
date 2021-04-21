@@ -1,0 +1,28 @@
+name: Test
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+        
+env:
+  ENV_PATH: lean/
+  
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    
+    env:
+      CONFIG_FILE: $ENV_PATH.config
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+      
+    - name: Test
+      run: |
+        echo "$CONFIG_FILE"
