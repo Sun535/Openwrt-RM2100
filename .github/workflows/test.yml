@@ -9,14 +9,13 @@ on:
         required: false
         default: 'false'
         
-env:
-  ENV_PATH: lean/
   
 jobs:
   build:
     runs-on: ubuntu-18.04
     
     env:
+      ENV_PATH: lean/
       CONFIG_FILE: ${{ env.ENV_PATH }}.config
     
     steps:
