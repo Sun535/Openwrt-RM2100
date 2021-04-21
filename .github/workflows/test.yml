@@ -16,7 +16,7 @@ jobs:
     
     env:
       ENV_PATH: lean/
-      CONFIG_FILE: ${{ env.ENV_PATH }}.config
+      CONFIG_FILE: ${{ ENV_PATH }}.config
     
     steps:
     - name: Checkout
