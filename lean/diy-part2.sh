@@ -22,7 +22,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Ma
 sed -i 's/OpenWrt/GB329/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 
-#:<<TRUE
+:<<TRUE
 [ -e package ] && mkdir package/d -p && cd package/d
 git clone https://github.com/garypang13/luci-app-eqos.git
 git clone https://github.com/vernesong/OpenClash.git
@@ -38,10 +38,25 @@ git clone https://github.com/garypang13/luci-app-bypass.git
 cd ../../
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
-#TRUE
+TRUE
 
+#:<<TRUE
 # garypang13
-#[ -e package ] && mkdir package/d -p && cd package/d
-#git clone https://github.com/garypang13/openwrt-packages.git
-#mv openwrt-packages/lua-maxminddb lua-maxminddb
-#rm -rf openwrt-packages
+[ -e package ] && mkdir package/d -p && cd package/d
+git clone https://github.com/garypang13/openwrt-packages.git
+mv openwrt-packages/lua-maxminddb lua-maxminddb
+mv openwrt-packages/smartdns-le smartdns-le
+mv openwrt-packages/luci-app-bypass luci-app-bypass
+mv openwrt-packages/luci-app-dnsfilter luci-app-dnsfilter
+mv openwrt-packages/luci-app-eqos luci-app-eqos
+mv openwrt-packages/luci-app-openclash luci-app-openclash
+mv openwrt-packages/luci-app-adguardhome luci-app-adguardhome
+mv openwrt-packages/open-app-filter open-app-filter
+mv openwrt-packages/oaf oaf
+mv openwrt-packages/luci-app-oaf luci-app-oaf
+rm -rf openwrt-packages
+git clone https://github.com/garypang13/luci-theme-edge.git -b 18.06
+cd ../../
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
+#TRUE
