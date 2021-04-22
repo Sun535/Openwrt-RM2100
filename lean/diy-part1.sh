@@ -31,6 +31,9 @@ sed -i '156a +\t\tpll &= ~(0x7ff);' target/linux/ramips/patches-5.4/102-mt7621-f
 # garypang13
 [ -e package ] && mkdir package/d -p && cd package/d
 git clone https://github.com/garypang13/openwrt-packages.git
+mv openwrt-packages/lua-maxminddb lua-maxminddb
+rm -rf openwrt-packages
+git clone https://github.com/garypang13/smartdns-le.git
 cd ../../
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}

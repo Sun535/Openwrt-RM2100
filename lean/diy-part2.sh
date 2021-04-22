@@ -22,7 +22,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Ma
 sed -i 's/OpenWrt/GB329/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 
-:<<TRUE
+#:<<TRUE
 [ -e package ] && mkdir package/d -p && cd package/d
 git clone https://github.com/garypang13/smartdns-le.git
 git clone https://github.com/garypang13/luci-app-eqos.git
@@ -33,4 +33,4 @@ git clone https://github.com/garypang13/luci-app-dnsfilter.git
 git clone https://github.com/garypang13/luci-theme-edge.git -b 18.06
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
 git clone https://github.com/Lienol/openwrt-OpenAppFilter.git
-TRUE
+#TRUE
