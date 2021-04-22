@@ -17,7 +17,7 @@
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 # passwall
-#sed -i '$a src-git diy1 https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
+sed -i '$a src-git diy1 https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
 
 
 # 超频
@@ -28,14 +28,3 @@ sed -i '156a +\t\trt_memc_w32(pll,MEMC_REG_CPU_PLL);' target/linux/ramips/patche
 sed -i '156a +\t\tpll |=  (0x312);' target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 sed -i '156a +\t\tpll &= ~(0x7ff);' target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 
-# garypang13
-[ -e package ] && mkdir package/d -p && cd package/d
-#git clone https://github.com/garypang13/openwrt-packages.git
-#mv openwrt-packages/lua-maxminddb lua-maxminddb
-#rm -rf openwrt-packages
-git clone https://github.com/jerrykuku/lua-maxminddb
-git clone https://github.com/garypang13/smartdns-le.git
-git clone https://github.com/garypang13/luci-app-bypass.git
-cd ../../
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}

@@ -24,13 +24,24 @@ sed -i 's/OpenWrt/GB329/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 #:<<TRUE
 [ -e package ] && mkdir package/d -p && cd package/d
-git clone https://github.com/garypang13/smartdns-le.git
 git clone https://github.com/garypang13/luci-app-eqos.git
 git clone https://github.com/vernesong/OpenClash.git
-git clone https://github.com/pymumu/luci-app-smartdns.git -b lede
-git clone https://github.com/pymumu/openwrt-smartdns.git
+#git clone https://github.com/pymumu/luci-app-smartdns.git -b lede
+#git clone https://github.com/pymumu/openwrt-smartdns.git
 git clone https://github.com/garypang13/luci-app-dnsfilter.git
 git clone https://github.com/garypang13/luci-theme-edge.git -b 18.06
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
 git clone https://github.com/Lienol/openwrt-OpenAppFilter.git
+git clone https://github.com/jerrykuku/lua-maxminddb
+git clone https://github.com/garypang13/smartdns-le.git
+git clone https://github.com/garypang13/luci-app-bypass.git
+cd ../../
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
+find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 #TRUE
+
+# garypang13
+#[ -e package ] && mkdir package/d -p && cd package/d
+#git clone https://github.com/garypang13/openwrt-packages.git
+#mv openwrt-packages/lua-maxminddb lua-maxminddb
+#rm -rf openwrt-packages
