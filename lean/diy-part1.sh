@@ -21,7 +21,7 @@
 
 
 # 超频
-sed -i 's/+111,89/+111,92/g' target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
+sed -i 's/+111,89/+111,93/g' target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 sed -i 's/cpu_clk, bus_clk/cpu_clk, bus_clk, i/g' target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 sed -i '156a +\t\tfor(i=0;i<1024;i++);' target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 sed -i '156a +\t\trt_memc_w32(pll,MEMC_REG_CPU_PLL);' target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
