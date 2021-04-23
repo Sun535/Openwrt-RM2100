@@ -19,7 +19,7 @@ sed -i 's/UTC/Asia/Shanghai/g' package/base-files/files/bin/config_generate
 # 主题
 sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Makefile
 # SSID
-sed -i 's/OpenWrt/GB329/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#sed -i 's/OpenWrt/GB329/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 
 :<<TRUE
