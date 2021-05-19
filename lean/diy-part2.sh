@@ -17,7 +17,7 @@ sed -i 's/OpenWrt/Sun/g' package/base-files/files/bin/config_generate
 # 时区
 sed -i 's/UTC/Asia/Shanghai/g' package/base-files/files/bin/config_generate
 # 主题
-sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Makefile
+#sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Makefile
 # SSID
 #sed -i 's/OpenWrt/GB329/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
@@ -40,7 +40,7 @@ find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 TRUE
 
-#:<<TRUE
+:<<TRUE
 # garypang13
 [ -e package ] && mkdir package/d -p && cd package/d
 git clone https://github.com/garypang13/openwrt-packages.git
@@ -59,4 +59,4 @@ git clone https://github.com/garypang13/luci-theme-edge.git -b 18.06
 cd ../../
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
-#TRUE
+TRUE
