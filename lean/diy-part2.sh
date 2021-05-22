@@ -22,6 +22,9 @@ sed -i 's/UTC/Asia/Shanghai/g' package/base-files/files/bin/config_generate
 #sed -i 's/OpenWrt/GB329/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 
+[ -e package ] && mkdir package/d -p && cd package/d
+git clone https://github.com/garypang13/luci-app-dnsfilter.git
+
 :<<TRUE
 [ -e package ] && mkdir package/d -p && cd package/d
 git clone https://github.com/garypang13/luci-app-eqos.git
